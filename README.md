@@ -259,9 +259,52 @@ GUI Framework:
 - Tkinter
 
 Libraries:
+- tkinter
+- ttk
+- collections
+- time
+- math
 
-tkinter
-ttk
-collections
-time
-math
+# Design Principles
+- Modular Architecture
+- Object-Oriented Programming
+- Clean and Readable Code
+- Interactive GUI
+- Educational Visualization
+- Reusable Components
+- Easy to Extend
+
+# Code Structure
+- GUI separated from algorithm logic
+- Individual module for each Operating System concept
+- Object-oriented implementation
+- Reusable utility functions
+- Consistent application theme
+
+ # Customization
+# Adding a New CPU Scheduling Algorithm
+1. Add the algorithm in cpu_scheduling.py.
+2. Update the algorithm selection menu.
+3. Display the calculated metrics.
+4. Update visualization if required.
+
+# Adding a New Page Replacement Algorithm
+1. Add the algorithm function in page_replacement.py.
+2. Include it in the algorithm selection list.
+3. Update the comparison feature.
+4. Display page faults, page hits, and frame visualization.
+
+# Visualizations
+- Gantt Chart → cpu_scheduling.py
+- Memory Allocation → memory_management.py
+- Disk Head Movement → disk_scheduling.py
+- File Allocation → file_management.py
+- Process Table → process_manager.py
+- Page Frame Animation → page_replacement.py
+
+# Known Limitations
+- Supports educational simulations only; not a real Operating System.
+- Visualizations are step-based and intended for learning.
+- Large input sizes may reduce GUI readability.
+- Configurations cannot be saved or loaded.
+Real hardware-level Operating System operations are not implem
