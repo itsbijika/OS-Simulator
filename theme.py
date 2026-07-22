@@ -1,5 +1,3 @@
-# Shared visual theme for the OS Algorithm Simulator.
-# Import this in every module so the whole app stays visually consistent.
 import tkinter as tk
 
 FONT = "Segoe UI"
