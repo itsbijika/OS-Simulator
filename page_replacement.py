@@ -1,4 +1,3 @@
-# Page Replacement Module for Operating System Algorithm Simulator
 import tkinter as tk
 from tkinter import messagebox
 import utils
@@ -27,9 +26,7 @@ class PageReplacementModule:
 
         self.setup_ui()
 
-    # ------------------------------------------------------------------
     # UI Construction
-    # ------------------------------------------------------------------
     def setup_ui(self):
         self.parent.configure(bg=BG_APP)
 
@@ -68,7 +65,7 @@ class PageReplacementModule:
             canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
         canvas.bind_all("<MouseWheel>", _on_mousewheel)
 
-        # --- Algorithm card ---
+        # Algorithm card 
         card_outer, card = make_card(panel)
         card_outer.pack(fill=tk.X, pady=(0, 12))
         pad = tk.Frame(card, bg=BG_CARD)
@@ -93,7 +90,7 @@ class PageReplacementModule:
             tk.Label(row, text=label, bg=BG_CARD, fg=TEXT_MUTED,
                     font=(FONT, 8)).pack(side=tk.LEFT, padx=(4, 0))
 
-        # --- Parameters card ---
+        # Parameters card
         card_outer, card = make_card(panel)
         card_outer.pack(fill=tk.X, pady=(0, 12))
         pad = tk.Frame(card, bg=BG_CARD)
@@ -118,7 +115,7 @@ class PageReplacementModule:
         make_button(pad, "Quick Setup (Classic Example)", self.quick_setup,
                    style="muted", font_size=9).pack(fill=tk.X)
 
-        # --- Actions card ---
+        #Actions card
         card_outer, card = make_card(panel)
         card_outer.pack(fill=tk.X, pady=(0, 12))
         pad = tk.Frame(card, bg=BG_CARD)
@@ -133,7 +130,7 @@ class PageReplacementModule:
         make_button(pad, "Clear", self.clear_all,
                    style="danger", font_size=9).pack(fill=tk.X)
 
-        # --- Speed card ---
+        #Speed card
         card_outer, card = make_card(panel)
         card_outer.pack(fill=tk.X, pady=(0, 12))
         pad = tk.Frame(card, bg=BG_CARD)
@@ -154,7 +151,7 @@ class PageReplacementModule:
         right = tk.Frame(content_frame, bg=BG_APP)
         right.pack(side=tk.RIGHT, fill=tk.BOTH, expand=True)
 
-        # --- Timeline card ---
+        #Timeline card
         card_outer, card = make_card(right)
         card_outer.pack(fill=tk.BOTH, expand=True, pady=(0, 12))
         pad = tk.Frame(card, bg=BG_CARD)
@@ -199,7 +196,7 @@ class PageReplacementModule:
         self.canvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
         h_scroll.pack(side=tk.BOTTOM, fill=tk.X)
 
-        # Explanation banner (accent bar + text)
+        # Explanation banner
         banner_outer = tk.Frame(pad, bg=BG_CARD)
         banner_outer.pack(fill=tk.X, pady=(10, 0))
         self.banner_bar = tk.Frame(banner_outer, bg=TEXT_MUTED, width=5)
@@ -212,7 +209,7 @@ class PageReplacementModule:
         )
         self.explanation_label.pack(side=tk.LEFT, fill=tk.X, expand=True)
 
-        # --- Stats card ---
+        #Stats card
         card_outer, card = make_card(right)
         card_outer.pack(fill=tk.X)
         pad = tk.Frame(card, bg=BG_CARD)
@@ -255,9 +252,7 @@ class PageReplacementModule:
         self.results_text.insert(tk.END, content)
         self.results_text.config(state=tk.DISABLED)
 
-    # ------------------------------------------------------------------
     # Input helpers
-    # ------------------------------------------------------------------
     def quick_setup(self):
         self.ref_string_var.set("7,0,1,2,0,3,0,4,2,3,0,3,2,1,2,0,1,7,0,1")
         self.num_frames_var.set("3")
@@ -310,10 +305,8 @@ class PageReplacementModule:
             messagebox.showerror("Input Error", "Number of frames must be a positive integer.")
             return None
 
-    # ------------------------------------------------------------------
-    # Algorithms
-    # ------------------------------------------------------------------
-    def simulate_fifo(self, ref_string, num_frames):
+    # Algorithm
+        def simulate_fifo(self, ref_string, num_frames):
         frames = [None] * num_frames
         queue = []
         steps = []
@@ -472,9 +465,8 @@ class PageReplacementModule:
 
         return steps
 
-    # ------------------------------------------------------------------
+
     # Run + Animate
-    # ------------------------------------------------------------------
     def run_simulation(self):
         ref_string = self.parse_reference_string()
         if ref_string is None:
