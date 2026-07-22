@@ -186,7 +186,7 @@ Round Robin
 - Fair CPU allocation
 - Context switching overhead
 
-#Memory Management
+# Memory Management
 First Fit
 - Fast allocation
 - Can create fragmentation
@@ -199,7 +199,7 @@ Worst Fit
 - Leaves large free blocks
 - Poor memory utilization
 - 
-#Disk Scheduling
+# Disk Scheduling
 
 FCFS
 - Simple
