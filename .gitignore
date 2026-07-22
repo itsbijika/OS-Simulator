@@ -1,51 +1,48 @@
-# Python bytecode and cache
+
 __pycache__/
 *.py[cod]
 *$py.class
 
-# Virtual environments
 venv/
 .env/
 .venv/
 ENV/
 env/
 
-# Packaging and build
 build/
 dist/
 *.egg-info/
 .eggs/
 
-# Test, coverage, type checking
+
 .pytest_cache/
 .coverage*
 htmlcov/
 .tox/
 .mypy_cache/
 
-# IDE/editor configs
+
 .vscode/
 .idea/
 
-# Jupyter & misc caches
+
 .ipynb_checkpoints/
 .cache/
 
-# Logs and temp files
+
 *.log
 *.tmp
 *.swp
 
-# OS-specific
+
 .DS_Store
 Thumbs.db
 
-# Runtime/config
+
 *.sqlite3
 *.db
 *.pid
 
-# Environment files
 .env
 .env.local
 .env.development
