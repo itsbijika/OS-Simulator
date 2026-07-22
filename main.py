@@ -1,7 +1,3 @@
-# This is the main entry point for the Operating System Algorithm Simulator application.
-# It sets up the main window and provides navigation to different modules for CPU
-# scheduling, memory management, disk scheduling, and process management. Each module
-# is implemented in a separate file and can be accessed through the home screen.
 import tkinter as tk
 import cpu_scheduling
 import memory_management
@@ -41,9 +37,6 @@ class OSSimulatorApp:
         for widget in self.main_frame.winfo_children():
             widget.destroy()
 
-    # ------------------------------------------------------------------
-    # Home screen
-    # ------------------------------------------------------------------
     def show_home(self):
         self.clear_frame()
 
@@ -103,15 +96,6 @@ class OSSimulatorApp:
         canvas.bind("<Enter>", lambda e: canvas.bind_all("<MouseWheel>", _on_mousewheel))
         canvas.bind("<Leave>", lambda e: canvas.unbind_all("<MouseWheel>"))
 
-        # Footer
-        footer = tk.Label(
-            self.main_frame,
-            text="Educational Tool for Understanding Operating System Concepts",
-            font=(FONT, 9, "italic"),
-            bg=BG_APP,
-            fg=TEXT_MUTED
-        )
-        footer.pack(side=tk.BOTTOM, pady=10)
 
     def build_hero(self):
         hero = tk.Frame(self.main_frame, bg=BG_HEADER)
@@ -122,10 +106,6 @@ class OSSimulatorApp:
 
         tk.Label(inner, text="🖥  OS Algorithm Simulator",
                 font=(FONT, 26, "bold"), bg=BG_HEADER, fg="white").pack()
-        tk.Label(inner, text="An interactive educational lab for visualizing core Operating System concepts",
-                font=(FONT, 11), bg=BG_HEADER, fg="#a9a6cf").pack(pady=(6, 0))
-        tk.Label(inner, text="Select a module below to get started",
-                font=(FONT, 10, "italic"), bg=BG_HEADER, fg="#c8c5e8").pack(pady=(10, 0))
 
     def build_module_card(self, parent, icon, title, description, command,
                           accent, accent_dark, accent_light, row, col):
@@ -165,9 +145,8 @@ class OSSimulatorApp:
         btn.bind("<Enter>", on_enter)
         btn.bind("<Leave>", on_leave)
 
-    # ------------------------------------------------------------------
-    # Module navigation
-    # ------------------------------------------------------------------
+
+    
     def show_cpu_scheduling(self):
         self.clear_frame()
         cpu_scheduling.CPUSchedulingModule(self.main_frame, self.show_home)
