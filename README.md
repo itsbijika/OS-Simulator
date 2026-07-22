@@ -101,6 +101,8 @@ OS_Sim/
 ├── utils.py
 ├── test_simulator.py
 └── README.md
+├── Project_Report.pdf
+├── demo.mp4
 ```
 
 # Documentation
